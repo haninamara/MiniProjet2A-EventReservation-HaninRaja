@@ -16,8 +16,7 @@
             <td>
                 <a href="index.php?action=edit_event&id=<?php echo $event['id']; ?>">Modifier</a> |
                 <a href="index.php?action=delete_event&id=<?php echo $event['id']; ?>" onclick="return confirm('Supprimer ?')">Supprimer</a> |
-                <a href="index.php?action=view_reservations&id=<?php echo $event['id']; ?>">Réservations</a>
-            </td>
+                <a href="index.php?action=view_reservations&id=<?php echo $event['id']; ?>">Voir Inscriptions</a>            </td>
         </tr>
     <?php endforeach; ?>
 <?php else: ?>
