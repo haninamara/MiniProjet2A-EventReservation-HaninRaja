@@ -15,12 +15,18 @@ class Event {
         $this->conn = $db;
     }
 
-    // Méthode pour lire tous les événements (Utilisé en Semaine 2)
     public function readAll() {
         $query = "SELECT * FROM " . $this->table_name . " ORDER BY date ASC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
+    }
+
+    public function getById($id) {
+        $stmt = $this->conn->prepare("SELECT * FROM " . $this->table_name . " WHERE id = :id");
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
 ?>
