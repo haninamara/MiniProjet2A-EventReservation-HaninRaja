@@ -1,6 +1,6 @@
+<?php include_once '../app/views/partials/header.php'; ?>
 <h1>Tableau de Bord Admin</h1>
 <a href="index.php?action=add_event">Ajouter un événement</a>
-<a href="index.php?action=logout">Déconnexion</a>
 
 <table border="1">
     <tr>
@@ -26,3 +26,4 @@
 <?php endif; ?>
 
 </table>
+<?php include_once '../app/views/partials/footer.php'; ?>

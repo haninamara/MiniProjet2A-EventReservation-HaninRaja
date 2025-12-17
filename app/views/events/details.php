@@ -1,4 +1,5 @@
 <?php
+include_once '../app/views/partials/header.php'; 
 if (!isset($event) || !is_array($event)) {
     echo "<p>Événement non trouvé.</p>";
     return; 
@@ -28,3 +29,4 @@ if (!isset($event) || !is_array($event)) {
 
     <button type="submit">Confirmer la réservation</button>
 </form>
+<?php include_once '../app/views/partials/footer.php'; ?>
