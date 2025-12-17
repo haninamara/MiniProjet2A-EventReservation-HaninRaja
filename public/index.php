@@ -6,7 +6,7 @@ require_once '../app/models/Reservation.php';
 require_once '../app/models/Admin.php';
 require_once '../app/controllers/EventController.php';
 require_once '../app/controllers/AdminController.php';
-require_once '../public/routes.php';
+require_once '../config/routes.php';
 
 $database = new Database();
 $db = $database->getConnection();
