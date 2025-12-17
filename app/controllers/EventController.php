@@ -1,8 +1,11 @@
 <?php
-class EventController {
+require_once '../app/models/Event.php';
+require_once '../app/models/Reservation.php';class EventController {
     private $eventModel;
+    private $db;
 
     public function __construct($db) {
+        $this->db = $db;
         $this->eventModel = new Event( $db );
     }
 
@@ -12,5 +15,29 @@ class EventController {
 
         include_once '../app/views/events/list.php';
     }
+
+
+public function showDetails($id) {
+    $event = $this->eventModel->getById($id);
+    include_once __DIR__ . '/../views/events/details.php';
+}
+
+
+    public function reserve() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $reservation = new Reservation($this->db);
+        $reservation->event_id = $_POST['event_id'];
+        $reservation->name = $_POST['name'];
+        $reservation->email = $_POST['email'];
+        $reservation->phone = $_POST['phone'];
+
+        if ($reservation->create()) {
+            echo "Réservation confirmée !";
+        } else {
+            echo "Erreur lors de la réservation.";
+        }
+    }
+    }
+
 }
 ?>

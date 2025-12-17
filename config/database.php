@@ -1,21 +1,20 @@
 <?php
 class Database {
-
     private $host = "localhost";
     private $db_name = "minievent_db";
     private $username = "root";
     private $password = "";
+    public $conn;
 
     public function getConnection() {
+        $this->conn = null;
         try {
-            $conn = new PDO(
-                "mysql:host={$this->host};dbname={$this->db_name};charset=utf8",
-                $this->username,
-                $this->password
-            );
-            return $conn;
-        } catch (PDOException $e) {
-            die("DB error: " . $e->getMessage());
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        } catch(PDOException $exception) {
+            echo "Erreur de connexion : " . $exception->getMessage();
         }
+        return $this->conn;
     }
 }
+?>
