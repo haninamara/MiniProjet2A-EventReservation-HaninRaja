@@ -1,3 +1,4 @@
+<?php include_once '../app/views/partials/header.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,3 +24,4 @@
     </div>
 </body>
 </html>
+<?php include_once '../app/views/partials/footer.php'; ?>

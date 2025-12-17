@@ -1,3 +1,4 @@
+<?php include_once '../app/views/partials/header.php'; ?>
 <h2>Réservations pour : <?php echo htmlspecialchars($event['title']); ?></h2>
 <a href="index.php?action=admin_dashboard">Retour au tableau de bord</a>
 
@@ -27,3 +28,4 @@
         <?php endif; ?>
     </tbody>
 </table>
+<?php include_once '../app/views/partials/footer.php'; ?>

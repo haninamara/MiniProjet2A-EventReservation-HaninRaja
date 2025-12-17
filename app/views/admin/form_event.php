@@ -1,3 +1,4 @@
+<?php include_once '../app/views/partials/header.php'; ?>
 <h2><?php echo isset($event) ? "Modifier l'événement" : "Ajouter un événement"; ?></h2>
 
 <form action="index.php?action=save_event" method="POST">
@@ -21,3 +22,4 @@
 
     <button type="submit">Enregistrer</button>
 </form>
+<?php include_once '../app/views/partials/footer.php'; ?>
