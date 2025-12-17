@@ -29,6 +29,12 @@ class Reservation {
 
     return $stmt->execute();
 }
-
+public function getByEvent($event_id) {
+    $query = "SELECT * FROM " . $this->table_name . " WHERE event_id = :event_id";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(':event_id', $event_id);
+    $stmt->execute();
+    return $stmt;
+}
 }
 ?>
